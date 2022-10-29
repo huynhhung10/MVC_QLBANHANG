@@ -6,11 +6,17 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('admin.all_product');
     }
 
-    public function add_product(){
+    public function add_product()
+    {
         return view('admin.add_product');
+    }
+    public function edit_product()
+    {
+        return view('admin.edit_product');
     }
 }
