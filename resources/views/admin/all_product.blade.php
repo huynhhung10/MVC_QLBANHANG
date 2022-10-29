@@ -31,12 +31,13 @@
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach ($products as $product)
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
+                          <th scope="row">{{ $product->id }}</th>
+                          <td>{{ $product->name }}</td>
                           <td><img src="..." class="rounded mx-auto d-block" alt="..."></td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
+                          <td>{{ $product->quantity }}</td>
+                          <td>{{ $product->price }}</td>
                           
                           <td>
                             <div class="form-check form-switch">
@@ -52,7 +53,7 @@
                           </td>
                           </td>
                         </tr>
-                       
+                      @endforeach
                       </tbody>
                     </table>
                   </div>
