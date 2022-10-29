@@ -6,11 +6,17 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('admin.all_customer');
     }
 
-    public function add_customer(){
+    public function add_customer()
+    {
         return view('admin.add_customer');
+    }
+    public function edit_customer()
+    {
+        return view('admin.edit_customer');
     }
 }

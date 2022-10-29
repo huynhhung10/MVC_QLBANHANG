@@ -54,14 +54,17 @@ Route::get('/edit-product', [ProductController::class, 'edit_product']);
 //QL NXB
 Route::get('/all-brand', [BrandController::class, 'index']);
 Route::get('/add-brand', [BrandController::class, 'add_brand']);
+Route::get('/edit-brand', [BrandController::class, 'edit_brand']);
 
 //QL loại sản phẩm
 Route::get('/all-category', [CategoryController::class, 'index']);
 Route::get('/add-category', [CategoryController::class, 'add_category']);
+Route::get('/edit-category', [CategoryController::class, 'edit_category']);
 
 //QL khách hàng
 Route::get('/all-customer', [CustomerController::class, 'index']);
 Route::get('/add-customer', [CustomerController::class, 'add_customer']);
+Route::get('/edit-customer', [CustomerController::class, 'edit_customer']);
 
 //QL user
 Route::get('/all-user', [UserController::class, 'index']);
@@ -70,3 +73,5 @@ Route::get('/add-user', [UserController::class, 'add_user']);
 //QL đơn hàng
 Route::get('/all-order', [OrderController::class, 'index']);
 Route::get('/view-order', [OrderController::class, 'show_order']);
+Route::get('/add-order', [OrderController::class, 'add_order']);
+Route::get('/edit-order', [OrderController::class, 'edit_order']);

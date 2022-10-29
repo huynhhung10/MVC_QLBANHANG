@@ -6,11 +6,17 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('admin.all_brand');
     }
 
-    public function add_brand(){
+    public function add_brand()
+    {
         return view('admin.add_brand');
+    }
+    public function edit_brand()
+    {
+        return view('admin.edit_brand');
     }
 }

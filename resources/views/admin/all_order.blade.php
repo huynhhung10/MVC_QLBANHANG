@@ -7,7 +7,7 @@
           <div class="card mb-4">
             <div class="card-header"><strong>Danh sách</strong><span class="small ms-1">Đơn hàng</span></div>
             <div class="card-body">
-          
+              <a href="{{URL::to('/add-order')}}" class="btn btn-primary active" aria-pressed="true" style="background-color: green; float:right; border: black">Tạo hóa đơn</a>
             <div class="col-md-4">  
                 <input type="text" class="form-control" id="inputZip" placeholder="Tìm kiếm">
             </div>
@@ -60,7 +60,7 @@
                             <button type="button" class="btn btn-success">Cập nhật</button>
                             |
                       
-                            <a href="#" class="btn btn-primary active" role="button" data-coreui-toggle="button" aria-pressed="true" style="background-color: #5DADE2;border: black ">chi tiet</a>
+                            <a href="{{URL::to('/edit-order')}}" class="btn btn-primary active" aria-pressed="true" style="background-color: #5DADE2;border: black ">Sửa</a>
                             |
                             <a href="#" class="btn btn-primary active" role="button" data-coreui-toggle="button" aria-pressed="true" style="background-color: #E74C3C; border: black">xóa</a>
                           </td>
