@@ -49,7 +49,11 @@ Route::post('/admin-dashboard', [AdminController::class, 'dashboard']);
 //QL sản phẩm
 Route::get('/all-product', [ProductController::class, 'index']);
 Route::get('/add-product', [ProductController::class, 'add_product']);
+Route::post('/addproduct', [ProductController::class, 'store']);
+Route::post('/product-destroy', [ProductController::class, 'destroy']);
 Route::get('/edit-product', [ProductController::class, 'edit_product']);
+Route::post('/updateproduct', [ProductController::class, 'update']);
+
 
 //QL NXB
 Route::get('/all-brand', [BrandController::class, 'index']);

@@ -35,7 +35,7 @@
                         <tr>
                           <th scope="row">{{ $product->id }}</th>
                           <td>{{ $product->name }}</td>
-                          <td><img src="..." class="rounded mx-auto d-block" alt="..."></td>
+                          <td><img src="storage/product_images/{{ $product->name}}.jpg" class="rounded mx-auto d-block" alt="..."></td>
                           <td>{{ $product->quantity }}</td>
                           <td>{{ $product->price }}</td>
                           
@@ -46,10 +46,14 @@
                             </div>
                           </td>
                           <td>
-                    
-                            <a href="{{URL::to('/edit-product')}}" class="btn btn-primary active" aria-pressed="true" style="background-color: #5DADE2;border: black ">sửa</a>
-                            |
-                            <a href="#" class="btn btn-primary active" role="button" data-coreui-toggle="button" aria-pressed="true" style="background-color: #E74C3C; border: black">xóa</a>
+                            <form method="get" action="edit-product">
+                              <input type="hidden" name="id" value="{{ $product->id }}"/>
+                              <input type="submit" class="btn btn-primary active" role="button" aria-pressed="true" style="background-color: #5DADE2;border: black " value="Sửa"/>
+                            </form> 
+                            <form method="post" action="product-destroy">
+                              <input type="hidden" name="id" value="{{ $product->id }}"/>
+                              <input type="submit" class="btn btn-primary active" role="button" aria-pressed="true" style="background-color: #E74C3C; border: black" value="Xóa"/>
+                            </form> 
                           </td>
                           </td>
                         </tr>
