@@ -12,6 +12,10 @@
                                 <label for="inputEmail4" class="form-label">Tên sản phảm</label>
                                 <input type="text" name="name" class="form-control" value="{{ $product->name }}">
                             </div>
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">Tên tác giả</label>
+                                <input type="text" name="author" class="form-control" value="{{ $product->author }}">
+                            </div>
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">Mô tả</label>
                                 <textarea style="resize: none"  rows="8" class="form-control" name="description" id="ckeditor1" placeholder="{{ $product->description }}"></textarea>
