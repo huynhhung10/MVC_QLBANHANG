@@ -9,6 +9,7 @@
 <!-- Breadcrumb-->
 <html lang="en">
   <head>
+      <base href="{{ asset('') }}">
     <base href="./">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,6 +36,7 @@
     <meta name="msapplication-TileImage" content="{{('backend/assets/favicon/ms-icon-144x144.png')}}">
     <meta name="theme-color" content="#ffffff">
     <!-- Vendors styles-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="{{('backend/vendors/simplebar/css/simplebar.css')}}">
     <link rel="stylesheet" href="{{('backend/css/vendors/simplebar.css')}}">
     <!-- Main styles for this application-->
@@ -42,8 +44,12 @@
     <!-- We use those styles to show code examples, you should remove them in your application.-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
     <link href="{{('backend/css/examples.css')}}" rel="stylesheet">
+      <link href="{{('backend/css/toastr.css')}}" rel="stylesheet">
+          <script src="{{('backend/js/toastr.min.js')}}"></script>
+
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+
     <script>
       window.dataLayer = window.dataLayer || [];
 
@@ -76,7 +82,7 @@
             <svg class="nav-icon">
               <use xlink:href="{{('backend/vendors/@coreui/icons/svg/free.svg#cil-speedometer')}}"></use>
             </svg> Dashboard</a></li>
-        
+
         <li class="nav-title">Components</li>
 
         <!-- Quản lý sản phẩm -->
@@ -88,7 +94,7 @@
 
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/all-product')}}"><span class="nav-icon"></span>Danh sách sản phẩm</a></li>
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/add-product')}}"><span class="nav-icon"></span>Thêm sản phẩm</a></li>
-            
+
           </ul>
         </li>
 
@@ -98,10 +104,10 @@
               <use xlink:href="{{('backend/vendors/@coreui/icons/svg/free.svg#cil-cursor')}}"></use>
             </svg>Quản lý NXB</a>
           <ul class="nav-group-items">
-            
+
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/all-brand')}}"><span class="nav-icon"></span>Danh sách NXB</a></li>
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/add-brand')}}"><span class="nav-icon"></span>Thêm NXB</a></li>
-            
+
           </ul>
         </li>
 
@@ -111,24 +117,24 @@
               <use xlink:href="{{('backend/vendors/@coreui/icons/svg/free.svg#cil-cursor')}}"></use>
             </svg>Quản lý danh mục</a>
           <ul class="nav-group-items">
-            
+
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/all-category')}}"><span class="nav-icon"></span>Danh sách danh mục</a></li>
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/add-category')}}"><span class="nav-icon"></span>Thêm danh mục</a></li>
-            
+
           </ul>
         </li>
 
-        
+
             <!--Quản lý khách hàng -->
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use xlink:href="{{('backend/vendors/@coreui/icons/svg/free.svg#cil-notes')}}"></use>
             </svg>Quản lý khách hàng</a>
           <ul class="nav-group-items">
-            
+
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/all-customer')}}"><span class="nav-icon"></span>Danh sách khách hàng</a></li>
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/add-customer')}}"><span class="nav-icon"></span>Thêm khách hàng</a></li>
-            
+
           </ul>
         </li>
 
@@ -138,10 +144,10 @@
               <use xlink:href="{{('backend/vendors/@coreui/icons/svg/free.svg#cil-star')}}"></use>
             </svg>Quản lý user</a>
           <ul class="nav-group-items">
-            
+
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/all-user')}}"><span class="nav-icon"></span>Danh sách user</a></li>
             <li class="nav-item"><a class="nav-link" href="{{URL::to('/add-user')}}"><span class="nav-icon"></span>Thêm user</a></li>
-            
+
           </ul>
         </li>
 
@@ -150,8 +156,8 @@
             <svg class="nav-icon">
               <use xlink:href="{{('backend/vendors/@coreui/icons/svg/free.svg#cil-bell')}}"></use>
             </svg>Quản lý đơn hàng</a>
-          <ul class="nav-group-items"> 
-            <li class="nav-item"><a class="nav-link" href="{{URL::to('/all-order')}}"><span class="nav-icon"></span>Danh sách đơn hàng</a></li>     
+          <ul class="nav-group-items">
+            <li class="nav-item"><a class="nav-link" href="{{URL::to('/all-order')}}"><span class="nav-icon"></span>Danh sách đơn hàng</a></li>
           </ul>
         </li>
 
@@ -162,14 +168,14 @@
             </svg>Đăng xuất</a></li>
 
 
-<!--         
+<!--
         <li class="nav-item"><a class="nav-link" href="widgets.html">
             <svg class="nav-icon">
               <use xlink:href="{{('backend/vendors/@coreui/icons/svg/free.svg#cil-calculator')}}"></use>
             </svg> Widgets<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
  -->
 
-       
+
 
 
         <li class="nav-item mt-auto"><a class="nav-link" href="https://coreui.io/docs/templates/installation/" target="_blank">
@@ -183,7 +189,7 @@
             <div class="fw-semibold">PRO</div>
           </a></li>
       </ul>
-      
+
     </div>
 
 
@@ -197,8 +203,8 @@
               <use xlink:href="{{('backend/vendors/@coreui/icons/svg/free.svg#cil-menu')}}"></use>
             </svg>
           </button><a class="header-brand d-md-none" href="#">
-            
-         
+
+
 
           <!-- drop down user menu -->
           <ul class="header-nav ms-3">
@@ -209,7 +215,7 @@
                 <div class="dropdown-header bg-light py-2">
                   <div class="fw-semibold">Account</div>
                 </div><a class="dropdown-item" href="#">
-                  
+
                   <svg class="icon me-2">
                     <use xlink:href="{{('backend/vendors/@coreui/icons/svg/free.svg#cil-account-logout')}}"></use>
                   </svg> Logout</a>
@@ -235,10 +241,10 @@
 
       <!-- Body content -->
       @yield('admin_content')
-      
-           
-       
-    
+
+
+
+
     <!-- CoreUI and necessary plugins-->
     <script src="{{('backend/vendors/@coreui/coreui/js/coreui.bundle.min.js')}}"></script>
     <script src="{{('backend/vendors/simplebar/js/simplebar.min.js')}}"></script>

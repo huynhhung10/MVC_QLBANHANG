@@ -13,4 +13,7 @@ class UserController extends Controller
     public function add_user(){
         return view('admin.add_user');
     }
+
+
+
 }
